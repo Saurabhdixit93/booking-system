@@ -128,6 +128,7 @@ Returns all bookings made by the currently authenticated user.
 Response Body:
 
 `[ 
+
   `{    
       "type": "hotel",    
       "userId": "exampleuserid",    
@@ -141,7 +142,9 @@ Response Body:
       "_id": "examplebookingid1",    "v": 0  
   }`
 
-  `{   "type": "flight",    
+
+  `{   
+      "type": "flight",    
       "userId": "exampleuserid",    
       "startDate": "2023-06-01T00:00:00.000Z",    
       "endDate": "2023-06-05T00:00:00.000Z",    
@@ -152,6 +155,7 @@ Response Body:
       "createdAt": "2023-04-22T00:00:00.000Z",    
       "_id": "examplebookingid2",    "v": 0  
   }`
+
 ]`
 
 3. Single Booking
