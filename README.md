@@ -141,7 +141,7 @@ Response Body:
       "_id": "examplebookingid1",    "v": 0  
   }`
 
-  {   "type": "flight",    
+  `{   "type": "flight",    
       "userId": "exampleuserid",    
       "startDate": "2023-06-01T00:00:00.000Z",    
       "endDate": "2023-06-05T00:00:00.000Z",    
