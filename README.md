@@ -30,16 +30,16 @@ Clone the repository to your local machine using the following command:
 * Authentication Endpoints
 
 1. Register
+<br>
+
 `-` Creates a new user account with an email and password.
 
 > Endpoint: POST `/api/user/create-account`
 Request Body:
 
 `{
-
   "email": "example@example.com",
   "password": "examplepassword"
-
 }`
 
 
@@ -49,11 +49,11 @@ Request Body:
   "message": 'User Created',
   "email": "example@example.com",
   "id": "exampleuserid"
-
 }`
 
 
 2. Login
+<br>
 
 `-` Logs in a user with an email and password and returns a JWT token for authorization.
 
@@ -61,10 +61,8 @@ Request Body:
 Request Body:
 
 `{
-
   "email": "example@example.com",
   "password": "examplepassword"
-
 }`
 
 
@@ -73,7 +71,6 @@ Request Body:
 `{
   "message": 'Login Successfull, here is your token',
   "token": "examplejwt"
-
 }`
 
 
@@ -91,7 +88,6 @@ Creates a new booking for a hotel, flight, or car with the given details.
 Request Body:
 
 `{
-
   "type": "hotel",
   "startDate": "2023-05-01",
   "endDate": "2023-05-05",
@@ -99,14 +95,13 @@ Request Body:
     "hotelName": "Example Hotel",
     "roomType": "Single"
   }
-
 }`
 
 
 > Response Body:
 
 `{
-
+  "message": 'booking created Succesfully ',
   "type": "hotel",
   "userId": "exampleuserid",
   "startDate": "2023-05-01T00:00:00.000Z",
@@ -118,47 +113,49 @@ Request Body:
   "createdAt": "2023-04-22T00:00:00.000Z",
   "_id": "examplebookingid",
   "__v": 0,
-
 }
 `
 
 2.  Get All Bookings
+<br>
 
 Returns all bookings made by the currently authenticated user.
 
 * Endpoint: GET `/api/booking/all-bookings`
+<br>
 
 > Authorization Header: x-access-token: examplejwt
 Response Body:
 
 `[ 
-    {    
-        "type": "hotel",    
-        "userId": "exampleuserid",    
-        "startDate": "2023-05-01T00:00:00.000Z",   
-        "endDate": "2023-05-05T00:00:00.000Z",    
-        "details": {      
-            "hotelName": "Example Hotel",      
-            "roomType": "Single"    
-        },    
-        "createdAt": "2023-04-22T00:00:00.000Z",    
-        "_id": "examplebookingid1",    "v": 0  
-    },
+  {    
+      "type": "hotel",    
+      "userId": "exampleuserid",    
+      "startDate": "2023-05-01T00:00:00.000Z",   
+      "endDate": "2023-05-05T00:00:00.000Z",    
+      "details": {      
+          "hotelName": "Example Hotel",      
+          "roomType": "Single"    
+      },    
+      "createdAt": "2023-04-22T00:00:00.000Z",    
+      "_id": "examplebookingid1",    "v": 0  
+  }
 
-    {   "type": "flight",    
-        "userId": "exampleuserid",    
-        "startDate": "2023-06-01T00:00:00.000Z",    
-        "endDate": "2023-06-05T00:00:00.000Z",    
-        "details": {      
-            "airline": "Example Airline",      
-            "flightNumber": "123"    
-        },    
-        "createdAt": "2023-04-22T00:00:00.000Z",    
-        "_id": "examplebookingid2",    "v": 0  
-    }
+  {   "type": "flight",    
+      "userId": "exampleuserid",    
+      "startDate": "2023-06-01T00:00:00.000Z",    
+      "endDate": "2023-06-05T00:00:00.000Z",    
+      "details": {      
+          "airline": "Example Airline",      
+          "flightNumber": "123"    
+      },    
+      "createdAt": "2023-04-22T00:00:00.000Z",    
+      "_id": "examplebookingid2",    "v": 0  
+  }
 ]`
 
 3. Single Booking
+<br>
 
 Get Booking by ID
 Returns a single booking by its ID.
@@ -168,6 +165,7 @@ Returns a single booking by its ID.
 <p>
 
 `-` URL Params:
+<br>
 
 id - The ID of the booking to retrieve (string, required)
 Headers:
@@ -195,11 +193,11 @@ Content:
   },
   "createdAt": "2021-10-04T14:25:59.283Z",
   "__v": 0
-
 }`
 
 
 * Error Responses:
+<br>
 
 > Code: 401 Unauthorized
 Content:
@@ -245,6 +243,7 @@ id - The ID of the booking to update (string, required)
 Headers:
 
 x-access-token - A valid JWT token to authenticate the request (string, required)
+<br>
 
 > Data Params:
 
@@ -252,6 +251,7 @@ x-access-token - A valid JWT token to authenticate the request (string, required
 `startDate - The start date of the booking in ISO format (string, required)`
 `endDate - The end date of the booking in ISO format (string, required)`
 `details - Additional booking details specific to the booking type (object, required)`
+<br>
 
 > Success Response:
 
@@ -310,7 +310,6 @@ Response:
 > Example success response:
 
 `{
-
   "message": 'Booking Deleted Successfully With Given ID',
   "_id": "614a153f3ce71b1e9c312cfd",
   "type": "hotel",
@@ -323,9 +322,9 @@ Response:
   },
   "createdAt": "2021-09-21T17:11:19.689Z",
   "__v": 0
-
 }`
 
+<br>
 
 > Example error response:
 
